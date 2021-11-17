@@ -76,3 +76,14 @@ function saveChanges() {
 	console.log(inputName);
 
 }
+
+$(document).on("click", ".discipline__name", function(e){
+  var id_click = $(event.target).parent().children(".invisibleTheme");
+  console.log(id_click.css('display'));
+  if ((id_click.css('display') == 'none') && (id_click.hasClass("mustVisible"))) {
+  	id_click.css({'display':'grid'});
+  } else {
+  	id_click.css({'display':'none'});
+  }
+  
+});

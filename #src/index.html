@@ -2,9 +2,11 @@
 <html lang="ru">
 <head>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Форма</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 </head>
 <body>
 	<header></header>
@@ -29,18 +31,29 @@
                 <p class="discipline__practise text">ПЗ</p>
                 <p class="discipline__laboratory text">ЛР</p>
                 <p class="discipline__ksr text">КСР</p>
+                
             </div>
 
 			<div class="discipline__chapter discipline__grid">
 				<p class="discipline__num text">1</p>
-				<h3 class="discipline__name text">Основные концпеции бизнеса</h3>
-				<p class="discipline__lectures text">2</p>
-				<p class="discipline__practise text">0</p>
-				<p class="discipline__laboratory text">0</p>
-				<p class="discipline__ksr text">1.00</p>
-				<p class="discipline__isw text">10</p>
-				<p class="discipline__allHours text">13.00</p>
-				<p class="discipline__brs text">20</p>
+				<h3 class="discipline__name text" >Основные концпеции бизнеса</h3>
+				<input type="text" disabled="" placeholder="2" class="discipline__lectures text"></input>
+				<input type="text" name="" disabled="" placeholder="0" class="discipline__practise text"></input>
+				<input type="text" name="" disabled="" placeholder="0" class="discipline__laboratory text"></input>
+				<input type="text" name="" disabled="" placeholder="1.00" class="discipline__ksr text"></input>
+				<input type="text" name="" disabled="" placeholder="10" class="discipline__isw text"></input>
+				<input type="text" name="" disabled="" placeholder="13.00" class="discipline__allHours text"></input>
+				<input type="text" name="" disabled="" placeholder="20" class="discipline__brs text"></input>
+				<div class="discipline__chapter__theme invisibleTheme mustVisible">
+                	<input type="text" disabled="" placeholder="Вводная пара" name=""class="discipline__theme__name"></input>
+                	<input type="text" disabled="" placeholder="1" name=""class="discipline__theme__lectures"></input>
+                	<input type="text" disabled="" placeholder="0" name=""class="discipline__theme__practise"></input>
+                	<input type="text" disabled="" placeholder="0" name=""class="discipline__theme__laboratory"></input>
+                	<input type="text" disabled="" placeholder="0" name=""class="discipline__theme__ksr"></input>
+                	<input type="text" disabled="" placeholder="0" name=""class="discipline__theme__isw"></input>
+                	<input type="text" disabled="" placeholder="1" name=""class="discipline__theme__allHours"></input>
+                	<input type="text" disabled="" placeholder="1" name=""class="discipline__theme__brs"></input>
+                </div>
 
 
 				<button class="discipline__chapterDel invisible">Удалить</button>

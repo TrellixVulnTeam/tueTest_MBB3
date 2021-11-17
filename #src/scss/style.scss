@@ -87,6 +87,54 @@ input[type="range"] { width: 100%; }
 		background-color: #ffffff;
 		max-width: 1080px;
 		position: relative;
+		&__theme {
+			position: relative;
+			grid-column: 1/25;
+			display: grid;
+			grid-template-columns: repeat(24, 1fr);
+			grid-auto-rows: minmax(30px, auto);
+			grid-gap: 5px;
+			&:after{
+				content: "Тема";
+			    display: block;
+			    position: absolute;
+			    left: 0;
+			    top: 15%;	
+			    z-index: 1;
+			};
+			.discipline__theme__name{
+				grid-column: 2/10;
+				grid-row: 1;
+			}
+			.discipline__theme__lectures{
+				grid-column: 10/12;
+				grid-row: 1;
+			}
+			.discipline__theme__practise{
+				grid-column: 12/14;
+				grid-row: 1;
+			}
+			.discipline__theme__laboratory{
+				grid-column: 14/16;
+				grid-row: 1;
+			}
+			.discipline__theme__ksr{
+				grid-column: 16/18;
+				grid-row: 1;
+			}
+			.discipline__theme__isw{
+				grid-column: 18/20;
+				grid-row: 1;
+			}
+			.discipline__theme__allHours{
+				grid-column: 20/22;
+				grid-row: 1;
+			}
+			.discipline__theme__brs{
+				grid-column: 22/25;
+				grid-row: 1;
+			}
+		}
 	}
 	&__gridName {
 		display: grid;
@@ -152,7 +200,9 @@ input[type="range"] { width: 100%; }
 			grid-row: 3;
 		}
 	}
-	&__name {}
+	&__name {
+		font-size: 16px;
+	}
 	&__hours {}
 	&__brs {
 		text-align: center;
