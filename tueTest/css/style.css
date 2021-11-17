@@ -357,6 +357,7 @@ input[type=range] {
 
 .discipline__name {
   font-size: 16px;
+  cursor: pointer;
 }
 
 .discipline__brs {

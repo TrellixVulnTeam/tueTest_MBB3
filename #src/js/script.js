@@ -76,14 +76,29 @@ function saveChanges() {
 	console.log(inputName);
 
 }
-
+//Сворачивание и разворачивание темы
 $(document).on("click", ".discipline__name", function(e){
-  var id_click = $(event.target).parent().children(".invisibleTheme");
-  console.log(id_click.css('display'));
-  if ((id_click.css('display') == 'none') && (id_click.hasClass("mustVisible"))) {
-  	id_click.css({'display':'grid'});
+  var accord = $(event.target).parent().children(".invisibleTheme");
+  if ((accord.css('display') == 'none') && (accord.hasClass("mustVisible"))) {
+  	accord.css({'display':'grid'});
   } else {
-  	id_click.css({'display':'none'});
+  	accord.css({'display':'none'});
   }
   
+});
+
+$(document).on("click", ".discipline__change", function(e){
+  var changeB = $(event.target);
+  var input = changeB.parent().parent().children("input");
+  input.removeAttr('disabled');
+  changeB.addClass("discipline__save")
+  console.log(input);
+});
+
+$(document).on("click", ".discipline__save", function(e){
+  var changeB = $(event.target);
+  var input = changeB.parent().parent().children("input");
+  input.attr('disabled', 'disabled');
+  changeB.removeClass("discipline__save")
+  console.log(input);
 });
