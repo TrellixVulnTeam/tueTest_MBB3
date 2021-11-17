@@ -239,20 +239,11 @@ input[type=range] {
 
 .discipline__chapter__theme {
   position: relative;
-  grid-column: 1/25;
+  grid-column: 1/26;
   display: grid;
-  grid-template-columns: repeat(24, 1fr);
+  grid-template-columns: repeat(25, 1fr);
   grid-auto-rows: minmax(30px, auto);
   grid-gap: 5px;
-}
-
-.discipline__chapter__theme:after {
-  content: "Тема";
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 15%;
-  z-index: 1;
 }
 
 .discipline__chapter__theme .discipline__theme__name {
@@ -291,13 +282,17 @@ input[type=range] {
 }
 
 .discipline__chapter__theme .discipline__theme__brs {
-  grid-column: 22/25;
+  grid-column: 22/24;
   grid-row: 1;
+}
+
+.discipline__chapter__theme .discipline__theme__buttonsOfChanges {
+  grid-column: 24/26;
 }
 
 .discipline__gridName {
   display: grid;
-  grid-template-columns: repeat(24, 1fr);
+  grid-template-columns: repeat(25, 1fr);
   grid-auto-rows: minmax(30px, auto);
   grid-gap: 5px;
   margin: 10px 10px 0 10px;
@@ -319,10 +314,10 @@ input[type=range] {
 }
 
 .discipline__gridName .discipline__brs {
-  grid-column: 22/25;
+  grid-column: 22/24;
   grid-row: 1/4;
   align-self: center;
-  padding: 45px;
+  padding: 45px 0;
 }
 
 .discipline__gridName .discipline__contact {
@@ -369,9 +364,27 @@ input[type=range] {
   vertical-align: middle;
 }
 
+.discipline__buttonsOfChanges {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+.discipline__change {
+  color: blue;
+}
+
+.discipline__delet {
+  color: red;
+}
+
 .discipline__grid {
   display: grid;
-  grid-template-columns: repeat(24, 1fr);
+  grid-template-columns: repeat(25, 1fr);
   grid-auto-rows: minmax(30px, auto);
   grid-gap: 5px;
   margin: 0px 10px 0 10px;
@@ -413,7 +426,11 @@ input[type=range] {
 }
 
 .discipline__grid .discipline__brs {
-  grid-column: 22/25;
+  grid-column: 22/24;
+}
+
+.discipline__grid .discipline__buttonsOfChanges {
+  grid-column: 24/26;
 }
 
 .discipline__grid .text {
