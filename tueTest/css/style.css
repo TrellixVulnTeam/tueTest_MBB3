@@ -246,6 +246,14 @@ input[type=range] {
   grid-gap: 5px;
 }
 
+.discipline__chapter__theme .discipline__theme__themeAdd {
+  grid-column: 18/24;
+  grid-row: 2;
+  background-color: #37a16f;
+  color: #ffffff;
+  border: 1px solid #37a16f;
+}
+
 .discipline__chapter__theme .discipline__theme__name {
   grid-column: 2/10;
   grid-row: 1;
