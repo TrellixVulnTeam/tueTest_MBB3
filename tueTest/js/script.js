@@ -24,7 +24,7 @@ document.querySelector('body').classList.add('no-webp');
 
 //Сворачивание и разворачивание темы
 $(document).on("click", ".discipline__name", function(e){
-  var accord = $(event.target).parent().children(".invisibleTheme");
+  var accord = $(e.target).parent().children(".invisibleTheme");
   var buttonAdd =accord.parent().children(".discipline__themeAdd");
   console.log(accord.attr('class'));
   if ((accord.css('display') == 'none') && (accord.hasClass("mustVisible")) && (buttonAdd.css('display') == 'none') && (buttonAdd.hasClass("mustVisible"))) {
@@ -38,7 +38,7 @@ $(document).on("click", ".discipline__name", function(e){
 });
 // убирает у input disabled
 $(document).on("click", ".discipline__change", function(e){
-  var changeB = $(event.target);
+  var changeB = $(e.target);
   var input = changeB.parent().parent().children("input");
   input.removeAttr('disabled');
   changeB.removeClass("discipline__change")
@@ -46,17 +46,23 @@ $(document).on("click", ".discipline__change", function(e){
   changeB.text('Сохр');
 });
 $(document).on("click", ".discipline__save", function(e){
-  var changeB = $(event.target);
+  var changeB = $(e.target);
   var input = changeB.parent().parent().children("input");
   input.attr('disabled', 'disabled');
   changeB.addClass("discipline__change")
   changeB.removeClass("discipline__save")
   changeB.text('Изм');
+
+//Значение сохраненной строки
+  let dataText =[]
+  input.each(function(i,input) {
+    dataText.push($(input).attr('placeholder'));
+  });
 });
 
 // Добавление новой темы
 $(document).on("click", ".discipline__themeAdd", function(e){
-  var button = $(event.target);
+  var button = $(e.target);
   newTheme = $('<div class="discipline__chapter__theme invisibleTheme mustVisible">' +
                 	'<input type="text"  placeholder="" name=""class="discipline__theme__name"></input>' +
                 	'<input type="text"  placeholder="" name=""class="discipline__theme__lectures"></input>' +
@@ -65,7 +71,6 @@ $(document).on("click", ".discipline__themeAdd", function(e){
                 	'<input type="text"  placeholder="" name=""class="discipline__theme__ksr"></input>' +
                 	'<input type="text"  placeholder="" name=""class="discipline__theme__isw"></input>' +
                 	'<input type="text"  placeholder="" name=""class="discipline__theme__allHours"></input>' + 
-                	'<input type="text"  placeholder="" name=""class="discipline__theme__brs"></input>' +
                 	'<div class="discipline__theme__buttonsOfChanges discipline__buttonsOfChanges">' +
 						'<a href="#" class="discipline__save">Сохранить</a>' +
 						'<a href="#" class="discipline__delet">удал</a>' +
