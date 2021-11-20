@@ -23,7 +23,7 @@ document.querySelector('body').classList.add('no-webp');
 
 
 //Сворачивание и разворачивание темы
-$(document).on("click", ".discipline__name", function(e){
+$(document).on("click", ".discipline__nameClick", function(e){
   var accord = $(e.target).parent().children(".invisibleTheme");
   var buttonAdd =accord.parent().children(".discipline__themeAdd");
   console.log(accord.attr('class'));
@@ -44,6 +44,7 @@ $(document).on("click", ".discipline__change", function(e){
   changeB.removeClass("discipline__change")
   changeB.addClass("discipline__save")
   changeB.text('Сохр');
+  input.parent().children(".discipline__nameClick").css({'display':'none'});
 });
 $(document).on("click", ".discipline__save", function(e){
   var changeB = $(e.target);
@@ -52,11 +53,12 @@ $(document).on("click", ".discipline__save", function(e){
   changeB.addClass("discipline__change")
   changeB.removeClass("discipline__save")
   changeB.text('Изм');
+  input.parent().children(".discipline__nameClick").css({'display':'block'});
 
 //Значение сохраненной строки
   let dataText =[]
   input.each(function(i,input) {
-    dataText.push($(input).attr('placeholder'));
+    dataText.push($(input).val());
   });
 });
 
